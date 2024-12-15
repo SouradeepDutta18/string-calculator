@@ -19,3 +19,13 @@ test('returns the sum when number string contain both newline and comma', () => 
 test('returns the sum when number string contain different delimeter', () => {
   expect(StringCalculator.add('//;\n1;2')).toBe(3);
 });
+
+it('should throw an error for negative numbers with the correct message', function() {
+  const input = '1,-2';
+  expect(() => StringCalculator.add(input)).toThrow('negative numbers not allowed -2');
+});
+
+it('should throw an error for negative numbers with the correct message', function() {
+  const input = '1,-2,-3';
+  expect(() => StringCalculator.add(input)).toThrow('negative numbers not allowed -2,-3');
+});
