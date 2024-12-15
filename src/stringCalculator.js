@@ -40,6 +40,10 @@ class StringCalculator {
       }
     }
 
+    const negativeNumbers = nums.filter((num) => num < 0);
+
+    if (negativeNumbers.length > 0) throw new Error(`negative numbers not allowed ${negativeNumbers}`);
+
     return nums.reduce((num1, num2) => num1 + num2, 0);
   }
 }
