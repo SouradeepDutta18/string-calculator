@@ -1,7 +1,9 @@
 class StringCalculator {
   static add(input) {
     if (input === '') return 0;
-    const numbers = input.split(',').map(Number);
+    // delimiter supporting both comma and newline character
+    let delimiter = /,|\n/;
+    const numbers = input.split(delimiter).map(Number);
     return numbers.reduce((sum, n) => sum + n, 0);
   }
 }
